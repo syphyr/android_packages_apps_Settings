@@ -107,6 +107,11 @@
         android:summary="@string/color_temperature_desc" />
 
     <SwitchPreference
+        android:key="dnscrypt_proxy"
+        android:title="@string/dnscrypt_proxy"
+        android:summary="@string/dnscrypt_proxy_desc" />
+
+    <SwitchPreference
         android:key="ota_disable_automatic_update"
         android:title="@string/ota_disable_automatic_update" />
 
