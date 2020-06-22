@@ -7415,6 +7415,15 @@
     <!-- Toast message for dnscrypt proxy -->
     <string name="dnscrypt_proxy_toast">Status of DNSCrypt Proxy service changed successfully</string>
 
+    <!-- Name of the setting to enable dnscrypt proxy with tor -->
+    <string name="dnscrypt_tor">Use DNSCrypt Proxy with Tor</string>
+
+    <!-- Description of dnscrypt proxy setting with tor -->
+    <string name="dnscrypt_tor_desc">Send all DNS requests though Tor for additional privacy. Requires restart of DNSCrypt Proxy service</string>
+
+    <!-- Toast message for dnscrypt proxy with tor -->
+    <string name="dnscrypt_tor_toast">Changes successfully made to DNSCrypt Proxy configuration</string>
+
     <!-- Name of the setting to disable the automatic update -->
     <string name="ota_disable_automatic_update">Automatic system updates</string>
 

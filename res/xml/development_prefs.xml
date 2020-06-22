@@ -112,6 +112,11 @@
         android:summary="@string/dnscrypt_proxy_desc" />
 
     <SwitchPreference
+        android:key="dnscrypt_tor"
+        android:title="@string/dnscrypt_tor"
+        android:summary="@string/dnscrypt_tor_desc" />
+
+    <SwitchPreference
         android:key="ota_disable_automatic_update"
         android:title="@string/ota_disable_automatic_update" />
 

@@ -44,6 +44,9 @@
     <!-- When true enable dnscrypt proxy setting. -->
     <bool name="config_enableDnscryptProxy">true</bool>
 
+    <!-- When true enable dnscrypt tor setting. -->
+    <bool name="config_enableDnscryptTor">true</bool>
+
     <!-- carrier tethering default ssid and password begin -->
     <bool name="use_empty_password_default">false</bool>
     <bool name="hotspot_default_ssid_with_imei_enable">false</bool>
