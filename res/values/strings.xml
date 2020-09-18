@@ -7410,19 +7410,19 @@
     <string name="dnscrypt_proxy">DNSCrypt Proxy</string>
 
     <!-- Description of dnscrypt proxy -->
-    <string name="dnscrypt_proxy_desc">Provides encrypted DNS, local DoH server, and ad blocker</string>
+    <string name="dnscrypt_proxy_desc">Provides encrypted DNS and ad blocker</string>
 
     <!-- Toast message for dnscrypt proxy -->
-    <string name="dnscrypt_proxy_toast">Status of DNSCrypt Proxy service changed successfully</string>
+    <string name="dnscrypt_proxy_toast">Status of DNSCrypt Proxy service changed</string>
 
     <!-- Name of the setting to enable dnscrypt proxy with tor -->
     <string name="dnscrypt_tor">Use DNSCrypt Proxy with Tor</string>
 
     <!-- Description of dnscrypt proxy setting with tor -->
-    <string name="dnscrypt_tor_desc">Send all DNS requests though Tor for additional privacy. Requires restart of DNSCrypt Proxy service</string>
+    <string name="dnscrypt_tor_desc">Send all requests though Tor for additional privacy</string>
 
     <!-- Toast message for dnscrypt proxy with tor -->
-    <string name="dnscrypt_tor_toast">Changes successfully made to DNSCrypt Proxy configuration</string>
+    <string name="dnscrypt_tor_toast">DNSCrypt Proxy service must be restarted for changes to take effect</string>
 
     <!-- Name of the setting to disable the automatic update -->
     <string name="ota_disable_automatic_update">Automatic system updates</string>
