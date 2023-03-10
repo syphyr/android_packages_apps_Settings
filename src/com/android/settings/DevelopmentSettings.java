@@ -203,6 +203,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private static final String MOBILE_DATA_ALWAYS_ON = "mobile_data_always_on";
     private static final String KEY_COLOR_MODE = "color_mode";
     private static final String FORCE_RESIZABLE_KEY = "force_resizable_activities";
+    private static final String FREEFORM_SUPPORT_KEY = "enable_freeform_support";
     private static final String COLOR_TEMPERATURE_KEY = "color_temperature";
     private static final String DNSCRYPT_PROXY_KEY = "dnscrypt_proxy";
     private static final String DNSCRYPT_TOR_KEY = "dnscrypt_tor";
@@ -333,6 +334,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private Preference mRootAppops;
 
     private SwitchPreference mForceResizable;
+
+    private SwitchPreference mFreeformSupport;
 
     private SwitchPreference mColorTemperaturePreference;
 
@@ -503,6 +506,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mSimulateColorSpace = addListPreference(SIMULATE_COLOR_SPACE);
         mUSBAudio = findAndInitSwitchPref(USB_AUDIO_KEY);
         mForceResizable = findAndInitSwitchPref(FORCE_RESIZABLE_KEY);
+        mFreeformSupport = findAndInitSwitchPref(FREEFORM_SUPPORT_KEY);
 
         mImmediatelyDestroyActivities = (SwitchPreference) findPreference(
                 IMMEDIATELY_DESTROY_ACTIVITIES_KEY);
@@ -830,6 +834,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         updateSimulateColorSpace();
         updateUSBAudioOptions();
         updateForceResizableOptions();
+        updateFreeformSupportOptions();
         updateWebViewMultiprocessOptions();
         updateWebViewProviderOptions();
         updateOemUnlockOptions();
@@ -1615,6 +1620,17 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 mForceResizable.isChecked() ? 1 : 0);
     }
 
+    private void updateFreeformSupportOptions() {
+        updateSwitchPreference(mFreeformSupport, Settings.Global.getInt(getContentResolver(),
+                Settings.Global.DEVELOPMENT_ENABLE_FREEFORM_WINDOWS_SUPPORT, 0) != 0);
+    }
+
+    private void writeFreeformSupportOptions() {
+        Settings.Global.putInt(getContentResolver(),
+                Settings.Global.DEVELOPMENT_ENABLE_FREEFORM_WINDOWS_SUPPORT,
+                mFreeformSupport.isChecked() ? 1 : 0);
+    }
+
     private void updateForceRtlOptions() {
         updateSwitchPreference(mForceRtlLayout,
                 Settings.Global.getInt(getActivity().getContentResolver(),
@@ -2316,6 +2332,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             writeUSBAudioOptions();
         } else if (preference == mForceResizable) {
             writeForceResizableOptions();
+        } else if (preference == mFreeformSupport) {
+            writeFreeformSupportOptions();
         } else if (INACTIVE_APPS_KEY.equals(preference.getKey())) {
             startInactiveAppsFragment();
         } else if (BACKGROUND_CHECK_KEY.equals(preference.getKey())) {
